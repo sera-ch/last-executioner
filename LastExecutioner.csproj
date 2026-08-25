@@ -1,0 +1,109 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>10</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <EnableNETAnalyzers>True</EnableNETAnalyzers>
+        <AnalysisMode>recommended</AnalysisMode>
+        <RootNamespace>LastExecutioner</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="0Harmony">
+            <HintPath>$(SILKSONG_PATH)/BepInEx/core/0Harmony.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp-firstpass">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/Assembly-CSharp-firstpass.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInEx">
+            <HintPath>$(SILKSONG_PATH)/BepInEx/core/BepInEx.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.Physics2DModule">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.Physics2DModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.InputLegacyModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VideoModule">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.VideoModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextRenderingModule">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.TextRenderingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AudioModule">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.AudioModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ImageConversionModule">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.ImageConversionModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.IMGUIModule">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.IMGUIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AnimationModule">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.AnimationModule.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.TextMeshPro">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/Unity.TextMeshPro.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIElementsModule">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.UIElementsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIModule">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/UnityEngine.UIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Posix">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/Mono.Posix.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Security">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/Mono.Security.dll</HintPath>
+        </Reference>
+        <Reference Include="PlayMaker">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/PlayMaker.dll</HintPath>
+        </Reference>
+        <Reference Include="TeamCherry.BuildBot">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/TeamCherry.BuildBot.dll</HintPath>
+        </Reference>
+        <Reference Include="TeamCherry.Cinematics">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/TeamCherry.Cinematics.dll</HintPath>
+        </Reference>
+        <Reference Include="TeamCherry.Localization">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/TeamCherry.Localization.dll</HintPath>
+        </Reference>
+        <Reference Include="TeamCherry.NestedFadeGroup">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/TeamCherry.NestedFadeGroup.dll</HintPath>
+        </Reference>
+        <Reference Include="TeamCherry.SharedUtils">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/TeamCherry.SharedUtils.dll</HintPath>
+        </Reference>
+        <Reference Include="TeamCherry.Splines">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/TeamCherry.Splines.dll</HintPath>
+        </Reference>
+        <Reference Include="TeamCherry.TK2D">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/TeamCherry.TK2D.dll</HintPath>
+        </Reference>
+        <Reference Include="XblPCSandbox">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/XblPCSandbox.dll</HintPath>
+        </Reference>
+        <Reference Include="zlib.net">
+            <HintPath>$(SILKSONG_PATH)/Hollow Knight Silksong_Data/Managed/zlib.net.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+</Project>
