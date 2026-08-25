@@ -1,4 +1,4 @@
-# 🚀 Coral Conqueror Khann
+# 🚀 Last Executioner
 A mod for the game Hollow Knight: Silksong that features a rematch with an enhanced Last Judge.
 
 ---
