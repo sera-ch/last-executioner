@@ -1,4 +1,5 @@
 using HarmonyLib;
+using LastExecutioner.Behavior;
 using LastExecutioner.Manager;
 
 namespace LastExecutioner.Patches;
@@ -23,5 +24,6 @@ public class DataPatches
         Plugin.Log.LogInfo("[LE] Save/Quit detected. Intercepting file write to force TRUE on disk.");
         __instance.playerData.defeatedLastJudge = true;
         __instance.playerData.blackThreadWorld = true;
+        JudgeBehavior.InBattle = false;
     }
 }

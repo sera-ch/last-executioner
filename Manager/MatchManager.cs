@@ -29,10 +29,9 @@ public class MatchManager : MonoBehaviour
 
     private void OnSceneChanged(Scene oldScene, Scene newScene)
     {
-        if (newScene.name == "Menu_Title")
+        if (newScene.name != CommonConstants.SCENE_NAME)
         {
-            Plugin.Log.LogInfo("[KR] Player returned to the menu, resetting data");
-
+            Plugin.Log.LogInfo("[LE] Player exited the room, resetting data");
             if (IsRematchActive)
             {
                 if (GameManager._instance != null && GameManager._instance.playerData != null)
@@ -42,15 +41,12 @@ public class MatchManager : MonoBehaviour
                 }
                 IsRematchActive = false;
             }
+            return;
         }
-
-        if (newScene.name == CommonConstants.SCENE_NAME)
+        if (GameManager._instance != null && GameManager._instance.playerData != null && !IsRematchActive)
         {
-            if (GameManager._instance != null && GameManager._instance.playerData != null && !IsRematchActive)
-            {
-                InitializeSessionData();
-                EnableRematch();
-            }
+            InitializeSessionData();
+            EnableRematch();
         }
     }
         

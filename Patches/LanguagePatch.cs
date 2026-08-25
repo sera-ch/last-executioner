@@ -12,7 +12,6 @@ namespace LastExecutioner.Patches;
  */
 public static class LanguagePatch
 {
-        
     [HarmonyPatch(typeof(Language), "Get")]
     [HarmonyPatch(new[] { typeof(string), typeof(string) })]
     public static bool Prefix(ref string key, ref string sheetTitle, ref string __result)
@@ -42,17 +41,24 @@ public static class LanguagePatch
     {
         return Language.CurrentLanguage() switch
         {
-            LanguageCode.FR => "Conquérant du Corail",
-            LanguageCode.DE => "Koralleneroberer",
-            LanguageCode.ES => "Conquistador de Corales",
-            LanguageCode.ZH => "珊瑚征服者",
-            _ => "Coral Conqueror"
+            LanguageCode.FR => "Dernière",
+            LanguageCode.DE => "Letzter",
+            LanguageCode.ES => "Última",
+            LanguageCode.ZH => "最后的",
+            _ => "Last"
         };
     }
         
     private static string GetLocalizedMainTitle()
     {
-        return "Khann";
+        return Language.CurrentLanguage() switch
+        {
+            LanguageCode.FR => "Bourreau",
+            LanguageCode.DE => "Henkerin",
+            LanguageCode.ES => "Verdugo",
+            LanguageCode.ZH => "刽子手",
+            _ => "Executioner"
+        };
     }
         
     private static string GetLocalizedSmallSubtitle()
