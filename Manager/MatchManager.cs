@@ -29,7 +29,8 @@ public class MatchManager : MonoBehaviour
 
     private void OnSceneChanged(Scene oldScene, Scene newScene)
     {
-        if (newScene.name != CommonConstants.SCENE_NAME)
+        if (oldScene.name != CommonConstants.SCENE_NAME && newScene.name != CommonConstants.SCENE_NAME) return;
+        if (oldScene.name == CommonConstants.SCENE_NAME && newScene.name != CommonConstants.SCENE_NAME)
         {
             Plugin.Log.LogInfo("[LE] Player exited the room, resetting data");
             if (IsRematchActive)
@@ -43,6 +44,7 @@ public class MatchManager : MonoBehaviour
             }
             return;
         }
+        if (oldScene.name != CommonConstants.ENTRY_SCENE_NAME) return;
         if (GameManager._instance != null && GameManager._instance.playerData != null && !IsRematchActive)
         {
             InitializeSessionData();
@@ -74,6 +76,6 @@ public class MatchManager : MonoBehaviour
         this.bossSceneObject = GameObject.Find("Boss Scene");
         if (this.bossSceneObject == null) return;
         this.bossSceneObject.AddComponent<JudgeBehavior>();
-        JudgeBehavior.BossObject = GameObject.Find("Last Judge");
+        JudgeBehavior.BossObject = GameObject.Find(CommonConstants.BOSS_NAME);
     }
 }
