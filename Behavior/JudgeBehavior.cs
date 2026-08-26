@@ -20,8 +20,7 @@ namespace LastExecutioner.Behavior
         {
             Instance = this;
             Phase = 1;
-            PlayMakerFSM[] fsms = GetComponentsInChildren<PlayMakerFSM>(true);
-            //DebugUtil.LogAllFsmVariables(fsms);
+            //DebugUtil.LogAllFsmVariables(GetComponentsInChildren<PlayMakerFSM>(true));
         }
 
         private static IEnumerator DisableClone(GameObject clone, float delay)

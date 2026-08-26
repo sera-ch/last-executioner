@@ -16,6 +16,6 @@ public class DebugPatches
         DamagePropertyFlags damagePropertyFlags)
     {
         // Invincibility for testing
-        __instance.playerData.health += damageAmount;
+        //__instance.playerData.health += damageAmount;
     }
 }
